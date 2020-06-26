@@ -141,7 +141,7 @@ button {
  border-radius: 5px;
  margin-right: 2%;
  vertical-align: middle;
- /* font-size: 1em; */
+ font-size: 1em;
 }
 
 .new{
@@ -166,7 +166,7 @@ button {
 .new-todo-item{
  height:4vh;
  width:30%;
- /* font-size: 1em; */
+ font-size: 1em;
  vertical-align: middle;
  margin-right: 10px;
 }
@@ -174,7 +174,7 @@ button {
 #new-todo-item{
  height:4vh;
  width:50%;
- /* font-size: 1em; */
+ font-size: 1em;
  vertical-align: middle;
  margin-right: 10px;
 }
