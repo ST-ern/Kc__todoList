@@ -265,7 +265,7 @@ box-shadow: 0 0.3px 1em rgb(17, 117, 184);
 font-size: 1.5em;
 }
 .item-container .edit:hover {
-background-color:rgb(10, 157, 255);
+background-color:rgb(9, 148, 241);
 color: rgb(231, 231, 231);
 width: 20%;
 border: none;
@@ -283,7 +283,7 @@ vertical-align: middle;
 width: 17%;
 margin: 2vh 0;
 margin-left: 2%;
-line-height: 1.5em;
+line-height: 2em;
 background-color: rgb(10, 157, 255);
 color:black;
 border-radius: 5px;
@@ -342,14 +342,14 @@ box-shadow: 0 0 0.5em rgb(122, 21, 21);
 color: black;
 }
 .item-container.moveToTop .edit {
-background-color:black;
+background-color:rgb(10, 157, 255);
 color: white;
-box-shadow:0 0.3px 0.2em rgb(56, 56, 56);
+box-shadow:0 0.3px 1em rgb(17, 117, 184);
 }
 .item-container.moveToTop .edit:hover {
-color:rgb(233, 190, 127);
-background-color: black;
-box-shadow: 0 0 0.5em rgb(90, 90, 90);
+  background-color:rgb(9, 148, 241);
+  color: rgb(231, 231, 231);
+  box-shadow: 0 0.3px 1em rgb(30, 130, 197);
 }
 .item-container.moveToTop .item-ddl {
 background-color: rgb(122, 21, 21);
@@ -376,14 +376,14 @@ box-shadow: 0 0 0.5em rgb(122, 21, 21);
 color: white;
 }
 .item-container.outDDL .edit {
-background-color:rgb(104, 73, 73);
+background-color:rgb(10, 157, 255);
 color: white;
-box-shadow:none;
+box-shadow:0 0.3px 1em rgb(17, 117, 184);
 }
 .item-container.outDDL .edit:hover {
-color:rgb(184, 184, 184);
-background-color: rgb(61, 61, 61);
-box-shadow: 0 0 0.5em rgb(90, 90, 90);
+  background-color:rgb(9, 148, 241);
+  color: rgb(231, 231, 231);
+  box-shadow: 0 0.3px 1em rgb(30, 130, 197);
 }
 .item-container.outDDL .item-ddl {
 background-color: rgb(122, 21, 21);
@@ -426,4 +426,51 @@ margin-top: 1.7%; */
 background-color: black;
 color: rgb(175, 9, 9);
 /* vertical-align: middle; */
+}
+
+
+
+
+#controller {
+  background-color: rgb(225,225, 225);
+  width: 100%;
+  height: 5vh;
+  display: flex;
+}
+#sort {
+  margin: 0;
+  padding: 0;
+  width: 26%;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 1.2em;
+}
+#sortTypeBtn {
+  font-size: 1.2em;
+  vertical-align: middle;
+  height: 3vh;
+  width: 15%;
+  margin-right: 5%;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgb(90, 90, 90);
+}
+
+#choose {
+  width: 40%;
+  font-size: 1.2em;
+  margin-left: 6%;
+  margin-right: 4%;
+}
+#choose #box1label {
+  color: rgb(224, 171, 91);
+}
+#choose #box2label {
+  color: rgb(0, 0, 0);
+}
+#choose #box3label {
+  color: rgb(156, 51, 51);
+}
+#choose #box4label {
+  color: rgb(102, 102, 102);
 }

@@ -10,6 +10,7 @@ class Item {
         } else {
             this.isOutDDL = false;
         }
+        this.completeAll = false;
         this.markDate = new Date();
         this.ddlYear = year;
         this.ddlMonth = month;

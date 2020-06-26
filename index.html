@@ -49,13 +49,36 @@
 			</div>
 			</div>
 
+			<div id="controller">
+			<div id="sort">
+				<input type="radio" class="sortType" name="sortType" value="complete" checked/>
+				<label for="complete">Complete</label>
+				<input type="radio" class="sortType" name="sortType" value="time" />
+				<label for="time">Time</label>
+				
+			</div>
+			<button id="sortTypeBtn" type="submit">Submit</button>
+
+			<div id="choose">
+				<input type="checkbox" class="chooseBox" id="box1" value="top" checked/>
+				<label id="box1label" for="top">紧急</label>
+				<input type="checkbox" class="chooseBox" id="box2" value="normal" checked/>
+				<label id="box2label" for="normal">执行中</label>
+				<input type="checkbox" class="chooseBox" id="box3" value="outddl" checked/>
+				<label id="box3label" for="outddl">超时</label>
+				<input type="checkbox" class="chooseBox" id="box4" value="complete" checked/>
+				<label id="box4label" for="complete">完成</label>
+			</div>
+
+			</div>
+
 			<section>
 				<ul id="listContainer" class="todo-list">
 				</ul>
 
 				<div id="footer">
 				<span id="count">当前总共有0个未完成的任务</span>
-				<button id="btn-clear-all" class="clearBtn" type="button" name="button"> Clear List</button>
+				<button id="btn-complete-all" class="clearBtn" type="button" name="button"> Complete All</button>
 				<button id="btn-clear-done" class="clearBtn" type="button" name="button"> Clear Completed</button>
 			</div>
 			</section>

@@ -6,6 +6,11 @@ let FormStorage = [];
 
 let taskCount = 1;  // 当前保有的任务总数，也是Form对应任务的最大下标+1
 let busyCount = 0;
+let sortType = 0; // 0: complete; 1: time
+let showTop = true;
+let showNormal = true;
+let showOut = true;
+let showComplete = true;
 
 function $(id) {
     return document.getElementById(id);
@@ -24,8 +29,14 @@ window.onload = function() {
   
 
     $('add-todo-item').onclick = submitTask;
-    $('btn-clear-all').onclick = clearAll;
+    // $('btn-clear-all').onclick = clearAll;
+    $('btn-complete-all').onclick = completeAll;
     $('btn-clear-done').onclick = clearDone;
+    $('sortTypeBtn').onclick = changeSortMode;
+    let boxs = document.querySelectorAll('.chooseBox');
+    for(let box of boxs) {
+      box.onclick = changeChooseType;
+    }
 };
 
 // 提交task
@@ -84,6 +95,28 @@ function clearDone() {
     reload();
 }
 
+function completeAll() {
+  if($('btn-complete-all').innerText != 'Back') {
+    for (let item of Form) {
+      if(!item.isCompleted) {
+        item.completeAll = true;
+      }
+      item.isCompleted = true;
+      item.isOutDDL = false;
+    }
+    $('btn-complete-all').innerText = 'Back';
+  } else {
+    for (let item of Form) {
+      if(item.completeAll) {
+        item.isCompleted = false;
+      }
+    }
+    $('btn-complete-all').innerText = 'Complete All';
+  }
+  reload();
+  
+}
+
 
 function reload() {
   let topCount = 0;
@@ -95,11 +128,16 @@ function reload() {
 
   // 四种：置顶（离ddl最近的没有outddl没有complete的），没有outddl没有complete， outddl， complete
     reorder();
-    if(Form[0].isOutDDL || Form[0].isCompleted) {
+    if(Form.length > 0) {
+      if(Form[0].isOutDDL || Form[0].isCompleted) {
+        topCount = -1;
+      }
+    }
+    
+    $('listContainer').innerHTML = '';
+    if(sortType == 1) {
       topCount = -1;
     }
-
-    $('listContainer').innerHTML = '';
     for (let item of Form) {
       createTaskCard(item, topCount); // 第0个Task置顶
     }
@@ -130,10 +168,45 @@ function lessThanToday(year, month, day) {
   return false;
 }
 
+function changeSortMode() {
+  let radio = document.getElementsByName("sortType");
+  let value = '';
+  for (i=0; i<radio.length; i++) {
+		if (radio[i].checked) {
+			value = radio[i].value;
+		}
+	}
+
+  if(value == "complete") {
+    sortType = 0;
+    reload();
+  } else {
+    sortType = 1;
+    reload();
+  }
+}
+
+function changeChooseType() {
+  let value = this.value;
+  if(value == 'top'){
+    showTop = !showTop;
+  } else if(value == 'normal') {
+    showNormal = !showNormal;
+  } else if(value == 'outddl') {
+    showOut = !showOut;
+  }else {
+    showComplete = !showComplete;
+  }
+  reload();
+}
+
 
 // 更新过程中对Form中Task的顺序进行更新，按照 最急迫-未完成-超时-已完成 的顺序
 function reorder() {
-  busyCount = 0;
+
+  if(sortType == 0) {
+    
+    busyCount = 0;
 
   let copyNormal = [];
   let copyOutDDL = [];
@@ -195,26 +268,35 @@ function reorder() {
 
   copyNormal.push.apply(copyNormal, copyOutDDL);
   copyNormal.push.apply(copyNormal, copyComplete);
-  // let copy = copy.concat(copyComplete);
-  // 接下来把normal按照离ddl的时间大小排序（ddl越小越在前，升序）
+  Form = copyNormal;
+  } else {
 
-
-  // // 这里是置顶逻辑
-  // let i=0;
-  // for(i=0; i<Form.length; i++) {
-  //   if(!Form[i].isCompleted) {
-  //     let copyItem = Form[i];
-  //     copyItem.count = copyCount;
-  //     copy.push(copyItem);
-  //     copyCount++;
-  //     break;
-  //   }
-  // }
-  // Form.splice(i,1);
-
+    Form.sort(function(item1, item2){
+      let year1 = item1.ddlYear;
+      let month1 = item1.ddlMonth;
+      let day1 = item1.ddlDay;
+      let year2 = item2.ddlYear;
+      let month2 = item2.ddlMonth;
+      let day2 = item2.ddlDay;
+      if(year2 > year1) {
+        return -1;
+      } else if(year1 == year2 && month2 > month1) {
+        return -1;
+      } else if(year1 == year2 && month2 == month1 && day2 > day1) {
+        return -1;
+      }
+      if(year1 == year2 && month2 == month1 && day2 == day1) {
+        return 0;
+      }
+      return 1;
+      // return 2-1 升序：2比1大，结果为true；2比1小，结果为false
+    });
+  }
+  
+  
   
 
-  Form = copyNormal;
+  
 }
 
 // function compareDDL() {
@@ -243,21 +325,26 @@ function reorder() {
 // }
 
 function createTaskCard(item, topCount) {
+    let show = showNormal;
     let card = document.createElement('li');
     let container = document.createElement('div');
     container.className = 'item-container';
     if(item.isCompleted) {
       container.className += ' complish';
+      show = showComplete;
     }
     if(item.count == topCount) {
       container.className += ' moveToTop';
+      show = showTop;
     }
     if(item.isOutDDL) {
       container.className += ' outDDL';
+      show = showOut;
     }
     card.appendChild(container);
 
-    // 删除单个task
+    if(show) {
+      // 删除单个task
     let deleteBtn = document.createElement('input');
     deleteBtn.className = 'delete';
     deleteBtn.type = 'button';
@@ -293,8 +380,8 @@ function createTaskCard(item, topCount) {
       }  
     })(item.count);
     container.appendChild(editBtn);
-    
-    
+    }
+     
 }
 
 function editTask(taskCount) {
@@ -310,7 +397,6 @@ function deleteTask(count) {
   taskCount--;
   reload();
 }
-
 
 
 // $('#formToDo').onsubmit = function(e) {
