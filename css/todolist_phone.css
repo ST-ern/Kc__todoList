@@ -326,7 +326,7 @@ color:white;
 /*置顶状态的task*/
 .item-container.moveToTop {
 background-color: rgb(255, 172, 47);
-box-shadow:0 1px 1em rgb(114, 64, 48);
+box-shadow:0 1px 2em rgb(150, 84, 54);
 }
 .item-container.moveToTop .delete {
 color:white;
