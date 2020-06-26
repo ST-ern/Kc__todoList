@@ -114,14 +114,14 @@ div {
  padding-top: 4vh;
  padding-bottom: 2vh;
  border-radius: 5px;
- /* font-size: 1em; */
+ font-size: 0.8em;
 }
 
 
 button {
  background-color:rgb(10, 157, 255);
  font-weight:700;
- /* font-size: 1em; */
+ font-size: 1em;
  color: white;
  height:4vh;
  width: 20vw;
@@ -222,7 +222,7 @@ li {
  border-radius: 5px;
  background-color: black;
  box-shadow: inset 0 0 0.5em rgb(225,225,225);
- /* font-size: 1em; */
+ font-size: 1em;
 }
 .item-container .delete:hover {
  margin-left: 1%;
@@ -233,7 +233,7 @@ li {
  /* background-color: rgb(225,225,225); */
  /* box-shadow: inset 0 0 0.5em rgb(90, 90, 90); */
  box-shadow: 0 0.3px 1em rgb(124, 6, 6);
- /* font-size: 1em; */
+ font-size: 1em;
  background-color:rgb(175, 9, 9);
  color: white;
 }
@@ -262,7 +262,7 @@ li {
  vertical-align: middle;
  right: 0;
  box-shadow: 0 0.3px 1em rgb(17, 117, 184);
- /* font-size: 1em; */
+ font-size: 1em;
 }
 .item-container .edit:hover {
  background-color:rgb(10, 157, 255);
@@ -274,7 +274,7 @@ li {
  vertical-align: middle;
  right: 0;
  box-shadow: 0 0.3px 1em rgb(30, 130, 197);
- /* font-size: 1em; */
+ font-size: 1em;
 }
 .item-container .item-ddl {
  display: inline-block;
@@ -407,7 +407,7 @@ li {
  margin-left: 1%;
  margin-top: 1vh;
  width: 55%;
- /* font-size: 1em; */
+ font-size: 1em;
  text-align: left;
 }
 #footer .clearBtn{
@@ -446,7 +446,7 @@ li {
     margin-bottom: auto;
   }
   #sortTypeBtn {
-    font-size: 1em;
+    font-size: 0.8em;
     vertical-align: middle;
     height: 3vh;
     width: 15%;
