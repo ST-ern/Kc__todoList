@@ -160,7 +160,7 @@ button {
  border-radius: 5px;
  margin-right: 2%;
  vertical-align: middle;
- font-size: 0.8em;
+ font-size: 1.2em;
 }
 
 .new{
@@ -185,7 +185,7 @@ button {
 .new-todo-item{
  height:4vh;
  width:45%;
- font-size: 0.8em;
+ font-size: 1.5em;
  vertical-align: middle;
  margin-right: 10px;
 }
@@ -193,7 +193,7 @@ button {
 #new-todo-item{
  height:4vh;
  width:60%;
- font-size: 0.8em;
+ font-size: 1.5em;
  vertical-align: middle;
  margin-right: 10px;
 }
@@ -225,14 +225,15 @@ li {
  /* padding-top: 30px;
  padding-bottom: 20px; */
  border-radius: 5px;
- font-size: 0.8em;
+ font-size: 1em;
  width: 100%;
  height: 6.5vh;
  padding: 6px 0;
  display: flex;
+ vertical-align: middle;
  box-shadow: 0 1px 1em rgb(90, 90, 90);
 }
-.item-container .edit {
+.item-container .delete {
  margin-left: 1%;
  color:white;
  width: 10%;
@@ -240,30 +241,35 @@ li {
  border-radius: 5px;
  background-color: black;
  box-shadow: inset 0 0 0.5em rgb(225,225,225);
- font-size: 1.8em;
+ font-size: 1.5em;
 }
-.item-container .edit:hover {
+.item-container .delete:hover {
  margin-left: 1%;
- color:black;
+ /* color:black; */
  width: 10%;
  border: none;
  border-radius: 5px;
- background-color: rgb(225,225,225);
- box-shadow: inset 0 0 0.5em rgb(90, 90, 90);
- font-size: 1.8em;
+ /* background-color: rgb(225,225,225); */
+ /* box-shadow: inset 0 0 0.5em rgb(90, 90, 90); */
+ box-shadow: 0 0.3px 1em rgb(124, 6, 6);
+ font-size: 1.5em;
+ background-color:rgb(175, 9, 9);
+ color: white;
 }
 .item-container .item-content{
  color: white;
+ display:-moz-inline-stack;
  display: inline-block;
  margin: 0.5vh 0;
- font-size: 2em;
+ font-size: 1.5em;
  vertical-align: middle;
- width: 41%;
+ width: 46%;
+ line-height: 3em;
  text-align: left;
- margin-left: 2%;
- margin-right: 5%;
+ margin-left: 1%;
+ margin-right: 1%;
 }
-.item-container .delete {
+.item-container .edit {
  background-color:rgb(10, 157, 255);
  /* font-weight:700; */
  color: white;
@@ -275,30 +281,28 @@ li {
  vertical-align: middle;
  right: 0;
  box-shadow: 0 0.3px 1em rgb(17, 117, 184);
- font-size: 2em;
+ font-size: 1.5em;
 }
-.item-container .delete:hover {
- background-color:rgb(175, 9, 9);
- /* font-weight:700; */
- color: white;
- /* height:40px; */
+.item-container .edit:hover {
+ background-color:rgb(10, 157, 255);
+ color: rgb(231, 231, 231);
  width: 20%;
  border: none;
  border-radius: 5px;
  margin-right: 2%;
  vertical-align: middle;
  right: 0;
- box-shadow: 0 0.3px 1em rgb(124, 6, 6);
- font-size: 2em;
+ box-shadow: 0 0.3px 1em rgb(30, 130, 197);
+ font-size: 1.5em;
 }
 .item-container .item-ddl {
  display: inline-block;
- font-size: 0.5em;
+ font-size: 1em;
  vertical-align: middle;
  width: 17%;
  margin: 2vh 0;
  margin-left: 2%;
- line-height: 2vh;
+ line-height: 1.5em;
  background-color: rgb(10, 157, 255);
  color:black;
  border-radius: 5px;
@@ -309,28 +313,29 @@ li {
  background-color: rgb(225,225,225);
  box-shadow:none;
 }
-.item-container.complish .edit {
+.item-container.complish .delete {
  background-color: rgb(225,225,225);
  color: black;
  box-shadow: inset 0 0 0.5em rgb(179, 179, 179);
-}
-.item-container.complish .edit:hover {
- background-color: rgb(0, 0, 0);
- color: white;
- box-shadow: inset 0 0 0.5em rgb(10, 157, 255);
-}
-.item-container.complish .item-content{
- color: black;
-}
-.item-container.complish .delete {
- background-color:rgb(148, 148, 148);
- color: white;
- box-shadow:none;
 }
 .item-container.complish .delete:hover {
  background-color:rgb(185, 111, 111);
  color: white;
  box-shadow: 0 0 0.5em rgb(151, 119, 119);
+}
+.item-container.complish .item-content{
+ color: black;
+ text-decoration: line-through;
+}
+.item-container.complish .edit {
+ background-color:rgb(148, 148, 148);
+ color: white;
+ box-shadow:none;
+}
+.item-container.complish .edit:hover {
+    background-color: rgb(78, 78, 78);
+    color: rgb(10, 157, 255);
+    box-shadow: 0 0 0.5em rgb(175, 175, 175);
 }
 .item-container.complish .item-ddl {
  background-color: rgb(148, 148, 148);
@@ -342,28 +347,28 @@ li {
  background-color: rgb(255, 172, 47);
  box-shadow:0 1px 1em rgb(90, 90, 90);
 }
-.item-container.moveToTop .edit {
+.item-container.moveToTop .delete {
  color:white;
  background-color: black;
  box-shadow: inset 0 0 0.5em rgb(240, 206, 112);
-}
-.item-container.moveToTop .edit:hover {
- color:black;
- background-color: rgb(233, 190, 127);
- box-shadow: inset 0 0 0.5em rgb(90, 90, 90);
-}
-.item-container.moveToTop .item-content{
- color: black;
-}
-.item-container.moveToTop .delete {
- background-color:black;
- color: white;
- box-shadow:0 0.3px 0.2em rgb(56, 56, 56);
 }
 .item-container.moveToTop .delete:hover {
  background-color:rgb(216, 0, 0);
  color: white;
  box-shadow: 0 0 0.5em rgb(122, 21, 21);
+}
+.item-container.moveToTop .item-content{
+ color: black;
+}
+.item-container.moveToTop .edit {
+ background-color:black;
+ color: white;
+ box-shadow:0 0.3px 0.2em rgb(56, 56, 56);
+}
+.item-container.moveToTop .edit:hover {
+ color:rgb(233, 190, 127);
+ background-color: black;
+ box-shadow: 0 0 0.5em rgb(90, 90, 90);
 }
 .item-container.moveToTop .item-ddl {
  background-color: rgb(122, 21, 21);
@@ -376,28 +381,28 @@ li {
  background-color: rgb(192, 133, 133);
  box-shadow:none;
 }
-.item-container.outDDL .edit {
+.item-container.outDDL .delete {
  color:white;
  background-color:rgb(192, 133, 133);
  box-shadow: inset 0 0 0.5em rgb(110, 61, 61);
-}
-.item-container.outDDL .edit:hover {
- color:black;
- background-color: rgb(212, 212, 212);
- box-shadow: inset 0 0 0.5em rgb(90, 90, 90);
-}
-.item-container.outDDL .item-content{
- color: white;
-}
-.item-container.outDDL .delete {
- background-color:black;
- color: white;
- box-shadow:0 0.3px 0.2em rgb(56, 56, 56);
 }
 .item-container.outDDL .delete:hover {
  background-color:rgb(216, 0, 0);
  color: white;
  box-shadow: 0 0 0.5em rgb(122, 21, 21);
+}
+.item-container.outDDL .item-content{
+ color: white;
+}
+.item-container.outDDL .edit {
+ background-color:rgb(104, 73, 73);
+ color: white;
+ box-shadow:none;
+}
+.item-container.outDDL .edit:hover {
+ color:rgb(184, 184, 184);
+ background-color: rgb(61, 61, 61);
+ box-shadow: 0 0 0.5em rgb(90, 90, 90);
 }
 .item-container.outDDL .item-ddl {
  background-color: rgb(122, 21, 21);
@@ -434,10 +439,10 @@ li {
  vertical-align: middle;
 }
 #footer .clearBtn:hover{
- margin: 5px 0;
+ /* margin: 5px 0;
  margin-right: 2%;
- margin-top: 1.7%;
+ margin-top: 1.7%; */
  background-color: black;
  color: rgb(175, 9, 9);
- vertical-align: middle;
+ /* vertical-align: middle; */
 }

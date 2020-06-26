@@ -12,6 +12,7 @@ let Form = [
     },
 ];
 let taskCount = 1;  // 当前保有的任务总数，也是Form对应任务的最大下标+1
+let busyCount = 0;
 
 function $(id) {
     return document.getElementById(id);
@@ -98,14 +99,14 @@ function reload() {
     for (let item of Form) {
       createTaskCard(item, topCount); // 第0个Task置顶
     }
-    $('count').innerHTML = '当前总共有' + taskCount + '个任务';
+    $('count').innerHTML = '当前总共有' + busyCount + '个未完成的任务';
 }
 
 function lessThanToday(year, month, day) {
   let today = new Date();
   let today_year = today.getFullYear();
   let today_month = today.getMonth() + 1;
-  let today_day = today.getDay();
+  let today_day = today.getDate();
   if(today_year > year) {
     return true;
   } else if(today_year == year && today_month > month) {
@@ -119,6 +120,8 @@ function lessThanToday(year, month, day) {
 
 // 更新过程中对Form中Task的顺序进行更新，按照 最急迫-未完成-超时-已完成 的顺序
 function reorder() {
+  busyCount = 0;
+
   let copyNormal = [];
   let copyOutDDL = [];
   let copyComplete = [];
@@ -130,6 +133,7 @@ function reorder() {
       let copyItem = item;
       // copyItem.count = copyCount;
       copyCount++;
+      busyCount++;
       copyNormal.push(copyItem);
     }
   }
@@ -139,6 +143,7 @@ function reorder() {
       copyItem.count = copyCount;
       copyCount++;
       copyOutDDL.push(copyItem);
+      busyCount++;
     }
   }
   for (let item of Form) {
@@ -239,17 +244,19 @@ function createTaskCard(item, topCount) {
     }
     card.appendChild(container);
 
-    // 改变task执行状态
-    let editBtn = document.createElement('input');
-    editBtn.className = 'edit';
-    editBtn.type = 'button';
-    editBtn.value = 'edit';
-    editBtn.onclick = (function() {
+    // 删除单个task
+    let deleteBtn = document.createElement('input');
+    deleteBtn.className = 'delete';
+    deleteBtn.type = 'button';
+    deleteBtn.value = '删除';
+    deleteBtn.onclick = (function() {
       return function (){
-        editTask(item.count);
+        deleteTask(item.count);
       }  
     })(item.count);
-    container.appendChild(editBtn);
+    container.appendChild(deleteBtn);
+
+    $('listContainer').appendChild(card);
 
     let ddl = document.createElement('span');
     ddl.className = 'item-ddl';
@@ -262,20 +269,19 @@ function createTaskCard(item, topCount) {
     content.innerText = item.content;
     container.appendChild(content);
 
-    
-    // 删除单个task
-    let deleteBtn = document.createElement('input');
-    deleteBtn.className = 'delete';
-    deleteBtn.type = 'button';
-    deleteBtn.value = 'edit';
-    deleteBtn.onclick = (function() {
+    // 改变task执行状态
+    let editBtn = document.createElement('input');
+    editBtn.className = 'edit';
+    editBtn.type = 'button';
+    editBtn.value = '点击翻转';
+    editBtn.onclick = (function() {
       return function (){
-        deleteTask(item.count);
+        editTask(item.count);
       }  
     })(item.count);
-    container.appendChild(deleteBtn);
-
-    $('listContainer').appendChild(card);
+    container.appendChild(editBtn);
+    
+    
 }
 
 function editTask(taskCount) {
