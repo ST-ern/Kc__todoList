@@ -1,0 +1,451 @@
+/*
+Project Name: Blank Template
+Client: Your Client
+Author: Your Name
+Developer @GA in NYC
+*/
+
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.alignright {
+	float: right;
+	padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+	float: left;
+	padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+    margin: 0;
+    /* overflow: hidden; */
+    width: 100vw;
+    min-height: 100vh;  /* vh相对视口的高度！！！！！记住*/
+     color: black;
+     background-image: linear-gradient(white, #e9e9e9);
+     background-repeat: no-repeat;
+     font-size: 18px;
+     line-height: 5vh;
+     font-family: 'Open Sans', sans-serif;
+     font-family: 'Comfortaa', cursive;
+}
+
+div {
+  display: block;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* Center the container */
+#container {
+	width: 100%;
+	margin: auto;
+}
+
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
+.markComplete{
+  color: grey;
+  text-decoration: line-through;
+
+}
+
+#main{
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 90vw;  /* 适配手机后需要修改 */
+  /* max-width: 500px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#head {
+  color: white;
+  background-color: black;
+  /* border-radius: 10px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 2vh;
+  border-bottom: 2px solid rgb(10, 157, 255);
+  box-shadow: 0 10px 8px rgb(121, 121, 121)/*, inset 0 -0.1em 0.5em rgb(10, 157, 255)*/;
+  margin-bottom: 20px;
+}
+/* #main > img{
+  float: left;
+  width:3%;
+  /* height:600px; 
+  margin-right: 3%;
+} */
+
+#main > #title{
+   /* background-color: #68C3A3; */
+   width: 70%;
+   margin-left: 15%;
+   margin-right: 15%;
+   /* border-radius: 5px; */
+}
+
+#title-text {
+  font-size: 3em;
+}
+
+#formToDo {
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  background-color: rgb(225,225,225);
+  padding-top: 4vh;
+  padding-bottom: 2vh;
+  border-radius: 5px;
+  font-size: 1.5em;
+}
+
+
+button {
+  background-color:rgb(10, 157, 255);
+  font-weight:700;
+  font-size: 2.5em;
+  color: white;
+  height:4vh;
+  width: 20vw;
+  border: none;
+  border-radius: 5px;
+  margin-right: 2%;
+}
+
+
+#add-todo-item {
+  background-color:black;
+  font-weight:700;
+  color: white;
+  height:4vh;
+  width: 20vw;
+  border: none;
+  border-radius: 5px;
+  margin-right: 2%;
+  vertical-align: middle;
+  font-size: 1.2em;
+}
+
+.new{
+  background-color:#68C3A3;
+  font-weight:700;
+  color: white;
+  height:auto;
+  width: auto;
+  border: none;
+  border-radius: 5px;
+  margin-right: 1%;
+  margin-left: 2%;
+}
+#clearDone{
+  width: 120px;
+}
+
+#add-todo-item:hover, button:hover{
+  background-color: rgb(10, 157, 255);
+}
+
+.new-todo-item{
+  height:4vh;
+  width:45%;
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#new-todo-item{
+  height:4vh;
+  width:60%;
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+ul{
+  list-style-type: none;
+  list-style:none;
+  margin: 0;
+  padding: 0;
+  /* list-style-image:url(https://annieselke.com/_ui/desktop/theme-freshamerican/js/images/wf-checkbox-empty.png);
+  list-style-position: inside;
+  background-color:#D6A2E8; */
+  color:white;
+  width:96%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+
+/*正常状态的task*/
+.item-container {
+  /* margin: 13px; */
+  background-color: black;
+  /* padding-top: 30px;
+  padding-bottom: 20px; */
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+  height: 6.5vh;
+  padding: 6px 0;
+  display: flex;
+  box-shadow: 0 1px 1em rgb(90, 90, 90);
+}
+.item-container .edit {
+  margin-left: 1%;
+  color:white;
+  width: 10%;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  box-shadow: inset 0 0 0.5em rgb(225,225,225);
+  font-size: 1.8em;
+}
+.item-container .edit:hover {
+  margin-left: 1%;
+  color:black;
+  width: 10%;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(225,225,225);
+  box-shadow: inset 0 0 0.5em rgb(90, 90, 90);
+  font-size: 1.8em;
+}
+.item-container .item-content{
+  color: white;
+  display: inline-block;
+  margin: 0.5vh 0;
+  font-size: 2em;
+  vertical-align: middle;
+  width: 41%;
+  text-align: left;
+  margin-left: 2%;
+  margin-right: 5%;
+}
+.item-container .delete {
+  background-color:rgb(10, 157, 255);
+  /* font-weight:700; */
+  color: white;
+  /* height:40px; */
+  width: 20%;
+  border: none;
+  border-radius: 5px;
+  margin-right: 2%;
+  vertical-align: middle;
+  right: 0;
+  box-shadow: 0 0.3px 1em rgb(17, 117, 184);
+  font-size: 2em;
+}
+.item-container .delete:hover {
+  background-color:rgb(175, 9, 9);
+  /* font-weight:700; */
+  color: white;
+  /* height:40px; */
+  width: 20%;
+  border: none;
+  border-radius: 5px;
+  margin-right: 2%;
+  vertical-align: middle;
+  right: 0;
+  box-shadow: 0 0.3px 1em rgb(124, 6, 6);
+  font-size: 2em;
+}
+.item-container .item-ddl {
+  display: inline-block;
+  font-size: 1em;
+  vertical-align: middle;
+  width: 17%;
+  margin: 2vh 0;
+  margin-left: 2%;
+  line-height: 2vh;
+  background-color: rgb(10, 157, 255);
+  color:black;
+  border-radius: 5px;
+}
+
+/*完成状态的task*/
+.item-container.complish {
+  background-color: rgb(225,225,225);
+  box-shadow:none;
+}
+.item-container.complish .edit {
+  background-color: rgb(225,225,225);
+  color: black;
+  box-shadow: inset 0 0 0.5em rgb(179, 179, 179);
+}
+.item-container.complish .edit:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  box-shadow: inset 0 0 0.5em rgb(10, 157, 255);
+}
+.item-container.complish .item-content{
+  color: black;
+}
+.item-container.complish .delete {
+  background-color:rgb(148, 148, 148);
+  color: white;
+  box-shadow:none;
+}
+.item-container.complish .delete:hover {
+  background-color:rgb(185, 111, 111);
+  color: white;
+  box-shadow: 0 0 0.5em rgb(151, 119, 119);
+}
+.item-container.complish .item-ddl {
+  background-color: rgb(148, 148, 148);
+  color:white;
+}
+
+/*置顶状态的task*/
+.item-container.moveToTop {
+  background-color: rgb(255, 172, 47);
+  box-shadow:0 1px 1em rgb(90, 90, 90);
+}
+.item-container.moveToTop .edit {
+  color:white;
+  background-color: black;
+  box-shadow: inset 0 0 0.5em rgb(240, 206, 112);
+}
+.item-container.moveToTop .edit:hover {
+  color:black;
+  background-color: rgb(233, 190, 127);
+  box-shadow: inset 0 0 0.5em rgb(90, 90, 90);
+}
+.item-container.moveToTop .item-content{
+  color: black;
+}
+.item-container.moveToTop .delete {
+  background-color:black;
+  color: white;
+  box-shadow:0 0.3px 0.2em rgb(56, 56, 56);
+}
+.item-container.moveToTop .delete:hover {
+  background-color:rgb(216, 0, 0);
+  color: white;
+  box-shadow: 0 0 0.5em rgb(122, 21, 21);
+}
+.item-container.moveToTop .item-ddl {
+  background-color: rgb(122, 21, 21);
+  color:rgb(233, 190, 127);
+}
+
+
+/*超时状态的task*/
+.item-container.outDDL {
+  background-color: rgb(192, 133, 133);
+  box-shadow:none;
+}
+.item-container.outDDL .edit {
+  color:white;
+  background-color:rgb(192, 133, 133);
+  box-shadow: inset 0 0 0.5em rgb(110, 61, 61);
+}
+.item-container.outDDL .edit:hover {
+  color:black;
+  background-color: rgb(212, 212, 212);
+  box-shadow: inset 0 0 0.5em rgb(90, 90, 90);
+}
+.item-container.outDDL .item-content{
+  color: white;
+}
+.item-container.outDDL .delete {
+  background-color:black;
+  color: white;
+  box-shadow:0 0.3px 0.2em rgb(56, 56, 56);
+}
+.item-container.outDDL .delete:hover {
+  background-color:rgb(216, 0, 0);
+  color: white;
+  box-shadow: 0 0 0.5em rgb(122, 21, 21);
+}
+.item-container.outDDL .item-ddl {
+  background-color: rgb(122, 21, 21);
+  color:white;
+}
+
+
+
+
+#footer {
+  background-color: rgb(225, 225, 225);
+  font-size: 0.5em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  height:  6vh;
+  margin-top: 2vh;
+}
+#footer #count{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1%;
+  margin-top: 1vh;
+  width: 55%;
+  font-size: 2.5em;
+  text-align: left;
+}
+#footer .clearBtn{
+  margin: 5px 0;
+  margin-right: 2%;
+  margin-top: 1vh;
+  background-color: rgb(90, 90, 90);
+  color: white;
+  vertical-align: middle;
+}
+#footer .clearBtn:hover{
+  margin: 5px 0;
+  margin-right: 2%;
+  margin-top: 1.7%;
+  background-color: black;
+  color: rgb(175, 9, 9);
+  vertical-align: middle;
+}
