@@ -264,7 +264,7 @@ li {
  font-size: 1.5em;
  vertical-align: middle;
  width: 46%;
- line-height: 3em;
+ /* line-height: 3em; */
  text-align: left;
  margin-left: 1%;
  margin-right: 1%;
@@ -445,4 +445,8 @@ li {
  background-color: black;
  color: rgb(175, 9, 9);
  /* vertical-align: middle; */
+}
+
+* {
+    color: red;
 }
