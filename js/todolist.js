@@ -1,16 +1,9 @@
+// const { stringify } = require("querystring");
+
 // 全局变量
-let Form = [
-    {
-      count: 0,
-      content: '今天要',
-      isCompleted: false,
-      isOutDDL: false,
-      markDate: new Date(),
-      ddlYear : '2020',
-      ddlMonth: '6',
-      ddlDay: '26'
-    },
-];
+let Form = [];
+let FormStorage = [];
+
 let taskCount = 1;  // 当前保有的任务总数，也是Form对应任务的最大下标+1
 let busyCount = 0;
 
@@ -19,6 +12,17 @@ function $(id) {
 }
 
 window.onload = function() {
+  // 读取当前的Form
+  FormStorage = JSON.parse(localStorage.getItem("k_ToDoListForm"));
+  if(FormStorage) {
+    for(let item of FormStorage) {
+      let itemObj = JSON.parse(item);
+      Form.push(itemObj);
+    }
+  }
+  reload();
+  
+
     $('add-todo-item').onclick = submitTask;
     $('btn-clear-all').onclick = clearAll;
     $('btn-clear-done').onclick = clearDone;
@@ -100,6 +104,15 @@ function reload() {
       createTaskCard(item, topCount); // 第0个Task置顶
     }
     $('count').innerHTML = '当前总共有' + busyCount + '个未完成的任务';
+
+    //存储Form到LocalStorage
+    FormStorage = [];
+    for(let item of Form) {
+      let itemString = JSON.stringify(item);
+      FormStorage.push(itemString);
+    }
+    localStorage.setItem("k_ToDoListForm", JSON.stringify(FormStorage));
+    
 }
 
 function lessThanToday(year, month, day) {
