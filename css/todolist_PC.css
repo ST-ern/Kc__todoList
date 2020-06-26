@@ -1,15 +1,3 @@
-/*
-Project Name: Blank Template
-Client: Your Client
-Author: Your Name
-Developer @GA in NYC
-*/
-
-
-/******************************************
-/* SETUP
-/*******************************************/
-
 /* Box Model Hack */
 * {
     -moz-box-sizing: border-box; /* Firexfox */
@@ -40,11 +28,6 @@ Developer @GA in NYC
    float: left;
    padding: 0 10px 10px 0; /* note the padding around a left floated image */
 }
-
-/******************************************
-/* BASE STYLES
-/*******************************************/
-
 body {
    margin: 0;
    /* overflow: hidden; */
@@ -53,8 +36,8 @@ body {
     color: black;
     background-image: linear-gradient(white, #e9e9e9);
     background-repeat: no-repeat;
-    font-size: 18px;
-    line-height: 5vh;
+    font-size: 1em;
+    line-height: 1.5em;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Comfortaa', cursive;
 }
@@ -62,20 +45,11 @@ body {
 div {
  display: block;
 }
-/******************************************
-/* LAYOUT
-/*******************************************/
-
 /* Center the container */
 #container {
    width: 100%;
    margin: auto;
 }
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
-
 
 .markComplete{
  color: grey;
@@ -87,7 +61,7 @@ div {
  text-align: center;
  border: 1px solid gray;
  border-radius: 10px;
- width: 90vw;  /* 适配手机后需要修改 */
+ width: 60vw;  /* 适配手机后需要修改 */
  /* max-width: 500px; */
  margin-left: auto;
  margin-right: auto;
@@ -120,27 +94,34 @@ div {
 }
 
 #title-text {
- font-size: 3em;
+    line-height: 2em;
+ font-size: 1.5em;
+}
+
+#title > img {
+    height: 1.5em;
+    /* line-height: 2.2em; */
+    vertical-align: text-bottom;
 }
 
 #formToDo {
  width: 96%;
  margin-left: 2%;
  margin-right: 2%;
- margin-top: 2vh;
- margin-bottom: 2vh;
+ margin-top: 1em;
+ margin-bottom: 1em;
  background-color: rgb(225,225,225);
  padding-top: 4vh;
  padding-bottom: 2vh;
  border-radius: 5px;
- font-size: 1.5em;
+ /* font-size: 1em; */
 }
 
 
 button {
  background-color:rgb(10, 157, 255);
  font-weight:700;
- font-size: 2.5em;
+ /* font-size: 1em; */
  color: white;
  height:4vh;
  width: 20vw;
@@ -155,12 +136,12 @@ button {
  font-weight:700;
  color: white;
  height:4vh;
- width: 20vw;
+ width: 15vw;
  border: none;
  border-radius: 5px;
  margin-right: 2%;
  vertical-align: middle;
- font-size: 1.2em;
+ /* font-size: 1em; */
 }
 
 .new{
@@ -184,16 +165,16 @@ button {
 
 .new-todo-item{
  height:4vh;
- width:45%;
- font-size: 1.5em;
+ width:30%;
+ /* font-size: 1em; */
  vertical-align: middle;
  margin-right: 10px;
 }
 
 #new-todo-item{
  height:4vh;
- width:60%;
- font-size: 1.5em;
+ width:50%;
+ /* font-size: 1em; */
  vertical-align: middle;
  margin-right: 10px;
 }
@@ -225,9 +206,9 @@ li {
  /* padding-top: 30px;
  padding-bottom: 20px; */
  border-radius: 5px;
- font-size: 1em;
+ /* font-size: 1em; */
  width: 100%;
- height: 6.5vh;
+ height: 8vh;
  padding: 6px 0;
  display: flex;
  vertical-align: middle;
@@ -241,7 +222,7 @@ li {
  border-radius: 5px;
  background-color: black;
  box-shadow: inset 0 0 0.5em rgb(225,225,225);
- font-size: 1.5em;
+ /* font-size: 1em; */
 }
 .item-container .delete:hover {
  margin-left: 1%;
@@ -252,7 +233,7 @@ li {
  /* background-color: rgb(225,225,225); */
  /* box-shadow: inset 0 0 0.5em rgb(90, 90, 90); */
  box-shadow: 0 0.3px 1em rgb(124, 6, 6);
- font-size: 1.5em;
+ /* font-size: 1em; */
  background-color:rgb(175, 9, 9);
  color: white;
 }
@@ -261,10 +242,10 @@ li {
  display:-moz-inline-stack;
  display: inline-block;
  margin: 0.5vh 0;
- font-size: 1.5em;
+ font-size: 0.8em;
  vertical-align: middle;
  width: 46%;
- /* line-height: 3em; */
+ line-height: 2.5em;
  text-align: left;
  margin-left: 1%;
  margin-right: 1%;
@@ -281,7 +262,7 @@ li {
  vertical-align: middle;
  right: 0;
  box-shadow: 0 0.3px 1em rgb(17, 117, 184);
- font-size: 1.5em;
+ /* font-size: 1em; */
 }
 .item-container .edit:hover {
  background-color:rgb(10, 157, 255);
@@ -293,11 +274,11 @@ li {
  vertical-align: middle;
  right: 0;
  box-shadow: 0 0.3px 1em rgb(30, 130, 197);
- font-size: 1.5em;
+ /* font-size: 1em; */
 }
 .item-container .item-ddl {
  display: inline-block;
- font-size: 1em;
+ font-size: 0.6em;
  vertical-align: middle;
  width: 17%;
  margin: 2vh 0;
@@ -345,11 +326,11 @@ li {
 /*置顶状态的task*/
 .item-container.moveToTop {
  background-color: rgb(255, 172, 47);
- box-shadow:0 1px 1em rgb(90, 90, 90);
+ box-shadow:0 1px 1em rgb(114, 64, 48);
 }
 .item-container.moveToTop .delete {
  color:white;
- background-color: black;
+ background-color: rgb(153, 122, 74);
  box-shadow: inset 0 0 0.5em rgb(240, 206, 112);
 }
 .item-container.moveToTop .delete:hover {
@@ -379,7 +360,7 @@ li {
 /*超时状态的task*/
 .item-container.outDDL {
  background-color: rgb(192, 133, 133);
- box-shadow:none;
+ box-shadow:0 1px 1em rgb(105, 22, 22);
 }
 .item-container.outDDL .delete {
  color:white;
@@ -427,7 +408,7 @@ li {
  margin-left: 1%;
  margin-top: 1vh;
  width: 55%;
- font-size: 2.5em;
+ /* font-size: 1em; */
  text-align: left;
 }
 #footer .clearBtn{
@@ -445,8 +426,4 @@ li {
  background-color: black;
  color: rgb(175, 9, 9);
  /* vertical-align: middle; */
-}
-
-* {
-    color: red;
 }

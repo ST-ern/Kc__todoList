@@ -84,7 +84,7 @@ function clearDone() {
 function reload() {
   let topCount = 0;
   for (let item of Form) {
-    if(lessThanToday(item.ddlYear, item.ddlMonth, item.ddlDay)) {
+    if(!item.isCompleted && lessThanToday(item.ddlYear, item.ddlMonth, item.ddlDay)) {
       item.isOutDDL = true;
     }
   }
