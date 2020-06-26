@@ -291,106 +291,105 @@ li {
 
 /*完成状态的task*/
 .item-container.complish {
- background-color: rgb(225,225,225);
- box-shadow:none;
-}
-.item-container.complish .delete {
- background-color: rgb(225,225,225);
- color: black;
- box-shadow: inset 0 0 0.5em rgb(179, 179, 179);
-}
-.item-container.complish .delete:hover {
- background-color:rgb(185, 111, 111);
- color: white;
- box-shadow: 0 0 0.5em rgb(151, 119, 119);
-}
-.item-container.complish .item-content{
- color: black;
- text-decoration: line-through;
-}
-.item-container.complish .edit {
- background-color:rgb(148, 148, 148);
- color: white;
- box-shadow:none;
-}
-.item-container.complish .edit:hover {
-    background-color: rgb(78, 78, 78);
-    color: rgb(10, 157, 255);
-    box-shadow: 0 0 0.5em rgb(175, 175, 175);
-}
-.item-container.complish .item-ddl {
- background-color: rgb(148, 148, 148);
- color:white;
-}
-
-/*置顶状态的task*/
-.item-container.moveToTop {
- background-color: rgb(255, 172, 47);
- box-shadow:0 1px 1em rgb(114, 64, 48);
-}
-.item-container.moveToTop .delete {
- color:white;
- background-color: rgb(153, 122, 74);
- box-shadow: inset 0 0 0.5em rgb(240, 206, 112);
-}
-.item-container.moveToTop .delete:hover {
- background-color:rgb(216, 0, 0);
- color: white;
- box-shadow: 0 0 0.5em rgb(122, 21, 21);
-}
-.item-container.moveToTop .item-content{
- color: black;
-}
-.item-container.moveToTop .edit {
- background-color:black;
- color: white;
- box-shadow:0 0.3px 0.2em rgb(56, 56, 56);
-}
-.item-container.moveToTop .edit:hover {
- color:rgb(233, 190, 127);
- background-color: black;
- box-shadow: 0 0 0.5em rgb(90, 90, 90);
-}
-.item-container.moveToTop .item-ddl {
- background-color: rgb(122, 21, 21);
- color:rgb(233, 190, 127);
-}
-
-
-/*超时状态的task*/
-.item-container.outDDL {
- background-color: rgb(192, 133, 133);
- box-shadow:0 1px 1em rgb(105, 22, 22);
-}
-.item-container.outDDL .delete {
- color:white;
- background-color:rgb(192, 133, 133);
- box-shadow: inset 0 0 0.5em rgb(110, 61, 61);
-}
-.item-container.outDDL .delete:hover {
- background-color:rgb(216, 0, 0);
- color: white;
- box-shadow: 0 0 0.5em rgb(122, 21, 21);
-}
-.item-container.outDDL .item-content{
- color: white;
-}
-.item-container.outDDL .edit {
- background-color:rgb(104, 73, 73);
- color: white;
- box-shadow:none;
-}
-.item-container.outDDL .edit:hover {
- color:rgb(184, 184, 184);
- background-color: rgb(61, 61, 61);
- box-shadow: 0 0 0.5em rgb(90, 90, 90);
-}
-.item-container.outDDL .item-ddl {
- background-color: rgb(122, 21, 21);
- color:white;
-}
-
-
+    background-color: rgb(225,225,225);
+    box-shadow:none;
+    }
+    .item-container.complish .delete {
+    background-color: rgb(225,225,225);
+    color: black;
+    box-shadow: inset 0 0 0.5em rgb(179, 179, 179);
+    }
+    .item-container.complish .delete:hover {
+    background-color:rgb(185, 111, 111);
+    color: white;
+    box-shadow: 0 0 0.5em rgb(151, 119, 119);
+    }
+    .item-container.complish .item-content{
+    color: black;
+    text-decoration: line-through;
+    }
+    .item-container.complish .edit {
+    background-color:rgb(148, 148, 148);
+    color: white;
+    box-shadow:none;
+    }
+    .item-container.complish .edit:hover {
+      background-color: rgb(78, 78, 78);
+      color: rgb(10, 157, 255);
+      box-shadow: 0 0 0.5em rgb(175, 175, 175);
+    }
+    .item-container.complish .item-ddl {
+    background-color: rgb(148, 148, 148);
+    color:white;
+    }
+    
+    /*置顶状态的task*/
+    .item-container.moveToTop {
+    background-color: rgb(255, 172, 47);
+    box-shadow:0 1px 2em rgb(150, 84, 54);
+    }
+    .item-container.moveToTop .delete {
+    color:white;
+    background-color: rgb(153, 122, 74);
+    box-shadow: inset 0 0 0.5em rgb(240, 206, 112);
+    }
+    .item-container.moveToTop .delete:hover {
+    background-color:rgb(216, 0, 0);
+    color: white;
+    box-shadow: 0 0 0.5em rgb(122, 21, 21);
+    }
+    .item-container.moveToTop .item-content{
+    color: black;
+    }
+    .item-container.moveToTop .edit {
+    background-color:rgb(10, 157, 255);
+    color: white;
+    box-shadow:0 0.3px 1em rgb(17, 117, 184);
+    }
+    .item-container.moveToTop .edit:hover {
+      background-color:rgb(9, 148, 241);
+      color: rgb(231, 231, 231);
+      box-shadow: 0 0.3px 1em rgb(30, 130, 197);
+    }
+    .item-container.moveToTop .item-ddl {
+    background-color: rgb(122, 21, 21);
+    color:rgb(233, 190, 127);
+    }
+    
+    
+    /*超时状态的task*/
+    .item-container.outDDL {
+    background-color: rgb(192, 133, 133);
+    box-shadow:0 1px 1em rgb(105, 22, 22);
+    }
+    .item-container.outDDL .delete {
+    color:white;
+    background-color:rgb(192, 133, 133);
+    box-shadow: inset 0 0 0.5em rgb(110, 61, 61);
+    }
+    .item-container.outDDL .delete:hover {
+    background-color:rgb(216, 0, 0);
+    color: white;
+    box-shadow: 0 0 0.5em rgb(122, 21, 21);
+    }
+    .item-container.outDDL .item-content{
+    color: white;
+    }
+    .item-container.outDDL .edit {
+    background-color:rgb(10, 157, 255);
+    color: white;
+    box-shadow:0 0.3px 1em rgb(17, 117, 184);
+    }
+    .item-container.outDDL .edit:hover {
+      background-color:rgb(9, 148, 241);
+      color: rgb(231, 231, 231);
+      box-shadow: 0 0.3px 1em rgb(30, 130, 197);
+    }
+    .item-container.outDDL .item-ddl {
+    background-color: rgb(122, 21, 21);
+    color:white;
+    }
+    
 
 
 #footer {
@@ -427,3 +426,53 @@ li {
  color: rgb(175, 9, 9);
  /* vertical-align: middle; */
 }
+
+
+
+#controller {
+    background-color: rgb(225,225, 225);
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    margin-bottom: 5vh;
+  }
+  #sort {
+    padding: 0;
+    width: 26%;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  #sortTypeBtn {
+    font-size: 1em;
+    vertical-align: middle;
+    height: 3vh;
+    width: 15%;
+    margin-right: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgb(90, 90, 90);
+  }
+  
+  #choose {
+    width: 40%;
+    font-size: 1em;
+    margin-left: 6%;
+    margin-right: 4%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  #choose #box1label {
+    color: rgb(224, 171, 91);
+  }
+  #choose #box2label {
+    color: rgb(0, 0, 0);
+  }
+  #choose #box3label {
+    color: rgb(156, 51, 51);
+  }
+  #choose #box4label {
+    color: rgb(102, 102, 102);
+  }
